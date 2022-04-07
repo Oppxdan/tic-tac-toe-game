@@ -83,13 +83,15 @@ table {
     justify-content: center;
     align-items: center;
     position: relative;
-    font-size:xx-large;
+    font-size:4rem;
     font-family: 'Permanent Marker', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor:pointer;
 }
 
-.cell.x, .cell.circle {
-    cursor: not-allowed;
+.cell:hover {
+    background-color:black;
+    
+    color:white;
 }
 
 .winning-message {
@@ -100,23 +102,31 @@ table {
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,.9);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: white;
+    height: 100vh;
+    width: 100vw;
     font-size: 6rem;
 }
 
-.winning-message.show {
-    display:flex;
+.message-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 #restart-button {
+    display: block;
     font-size: 4rem;
     background-color: white;
     border: 1px solid black;
     padding: .25em .5em;
     cursor: pointer;
+    border-radius: 5%;
+    
 }
 
 #restart-button:hover {

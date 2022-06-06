@@ -94,6 +94,21 @@ table {
     color:white;
 }
 
+.cell:first-child {
+    border-top-left-radius: 15%;
+} 
+
+.cell:nth-child(3) {
+    border-top-right-radius: 15%;
+}
+
+.cell:nth-child(7) {
+    border-bottom-left-radius: 15%;
+} 
+.cell:nth-child(9) {
+    border-bottom-right-radius: 15%;
+}
+
 .winning-message {
     display: none;
     position: fixed;
@@ -134,11 +149,6 @@ table {
     color:white;
     border-color:white;
 }
-
-
-
-
-
 
 
 

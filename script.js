@@ -2,6 +2,7 @@ const winningText = document.querySelector(".winning-text");
 const restartButton = document.querySelector("#restart-button");
 const winningMessage = document.querySelector(".winning-message");
 const boardCells = document.querySelectorAll(".cell");
+
 restartButton.addEventListener("click", function() {
     winningMessage.style.display='none';
     restartButton.style.display = 'none';
@@ -28,19 +29,6 @@ function playGame() {
       [0,1,2,
       3,4,5,
       6,7,8];
-    const possibilities = [
-        /* Rows */
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        /* Columns */
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        /* Diagonals */
-        [0,4,8],
-        [2,4,6]
-    ];
     function checkWin() {
         function getAllIndexes(val) {
             var indexes = [];
@@ -51,17 +39,17 @@ function playGame() {
             return indexes;
         }
             
-        var playerIndexes2 = getAllIndexes('x');
-        var computerIndexes2 = getAllIndexes('o');
+        var getPlayerIndexes = getAllIndexes('x');
+        var getComputerIndexes = getAllIndexes('o');
     
         /* 
-        
+        Gets all indexes of where the player chooses and where
+        the computer chooses.
         */
     
-    
-        if (playerIndexes2.includes(0)) {
-            if (playerIndexes2.includes(1)) {
-                if (playerIndexes2.includes(2)) {
+        if (getPlayerIndexes.includes(0)) {
+            if (getPlayerIndexes.includes(1)) {
+                if (getPlayerIndexes.includes(2)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -71,9 +59,9 @@ function playGame() {
                 }
             }
         }
-        if (playerIndexes2.includes(3)) {
-            if (playerIndexes2.includes(4)) {
-                if (playerIndexes2.includes(5)) {
+        if (getPlayerIndexes.includes(3)) {
+            if (getPlayerIndexes.includes(4)) {
+                if (getPlayerIndexes.includes(5)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -83,9 +71,9 @@ function playGame() {
                 }
             }
         }
-        if (playerIndexes2.includes(6)) {
-            if (playerIndexes2.includes(7)) {
-                if (playerIndexes2.includes(8)) {
+        if (getPlayerIndexes.includes(6)) {
+            if (getPlayerIndexes.includes(7)) {
+                if (getPlayerIndexes.includes(8)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -95,9 +83,9 @@ function playGame() {
                 }
             }
         }
-        if (playerIndexes2.includes(0)) {
-            if (playerIndexes2.includes(3)) {
-                if (playerIndexes2.includes(6)) {
+        if (getPlayerIndexes.includes(0)) {
+            if (getPlayerIndexes.includes(3)) {
+                if (getPlayerIndexes.includes(6)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -107,9 +95,9 @@ function playGame() {
                 }
             }
         }
-        if (playerIndexes2.includes(1)) {
-            if (playerIndexes2.includes(4)) {
-                if (playerIndexes2.includes(7)) {
+        if (getPlayerIndexes.includes(1)) {
+            if (getPlayerIndexes.includes(4)) {
+                if (getPlayerIndexes.includes(7)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -119,9 +107,9 @@ function playGame() {
                 }
             }
         }
-        if (playerIndexes2.includes(2)) {
-            if (playerIndexes2.includes(5)) {
-                if (playerIndexes2.includes(8)) {
+        if (getPlayerIndexes.includes(2)) {
+            if (getPlayerIndexes.includes(5)) {
+                if (getPlayerIndexes.includes(8)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -131,9 +119,9 @@ function playGame() {
                 }
             }
         }
-        if (playerIndexes2.includes(0)) {
-            if (playerIndexes2.includes(4)) {
-                if (playerIndexes2.includes(8)) {
+        if (getPlayerIndexes.includes(0)) {
+            if (getPlayerIndexes.includes(4)) {
+                if (getPlayerIndexes.includes(8)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -143,9 +131,9 @@ function playGame() {
                 }
             }
         }
-        if (playerIndexes2.includes(2)) {
-            if (playerIndexes2.includes(4)) {
-                if (playerIndexes2.includes(6)) {
+        if (getPlayerIndexes.includes(2)) {
+            if (getPlayerIndexes.includes(4)) {
+                if (getPlayerIndexes.includes(6)) {
                     gameWon = true;
                     console.log("You win!");
                     winningText.textContent = "X Wins!";
@@ -160,9 +148,9 @@ function playGame() {
         Check if the computer has won
         */
     
-        if (computerIndexes2.includes(0)) {
-            if (computerIndexes2.includes(1)) {
-                if (computerIndexes2.includes(2)) {
+        if (getComputerIndexes.includes(0)) {
+            if (getComputerIndexes.includes(1)) {
+                if (getComputerIndexes.includes(2)) {
                     gameWon = true;
                     winningText.textContent = "O Wins!";
                     winningMessage.style.display='block';
@@ -171,9 +159,9 @@ function playGame() {
                 }
             }
         }
-        if (computerIndexes2.includes(3)) {
-            if (computerIndexes2.includes(4)) {
-                if (computerIndexes2.includes(5)) {
+        if (getComputerIndexes.includes(3)) {
+            if (getComputerIndexes.includes(4)) {
+                if (getComputerIndexes.includes(5)) {
                     gameWon = true;
                     winningText.textContent = "O Wins!"
                     winningMessage.style.display='block';
@@ -182,9 +170,9 @@ function playGame() {
                 }
             }
         }
-        if (computerIndexes2.includes(6)) {
-            if (computerIndexes2.includes(7)) {
-                if (computerIndexes2.includes(8)) {
+        if (getComputerIndexes.includes(6)) {
+            if (getComputerIndexes.includes(7)) {
+                if (getComputerIndexes.includes(8)) {
                     gameWon = true;
                     winningText.textContent = "O Wins!"
                     winningMessage.style.display='block';
@@ -193,9 +181,9 @@ function playGame() {
                 }
             }
         }
-        if (computerIndexes2.includes(0)) {
-            if (computerIndexes2.includes(3)) {
-                if (computerIndexes2.includes(6)) {
+        if (getComputerIndexes.includes(0)) {
+            if (getComputerIndexes.includes(3)) {
+                if (getComputerIndexes.includes(6)) {
                     gameWon = true;
                     winningText.textContent = "O Wins!"
                     winningMessage.style.display='block';
@@ -204,9 +192,9 @@ function playGame() {
                 }
             }
         }
-        if (computerIndexes2.includes(1)) {
-            if (computerIndexes2.includes(4)) {
-                if (computerIndexes2.includes(7)) {
+        if (getComputerIndexes.includes(1)) {
+            if (getComputerIndexes.includes(4)) {
+                if (getComputerIndexes.includes(7)) {
                     gameWon = true;
                     winningText.textContent = "O Wins!"
                     winningMessage.style.display='block';
@@ -215,9 +203,9 @@ function playGame() {
                 }
             }
         }
-        if (computerIndexes2.includes(2)) {
-            if (computerIndexes2.includes(5)) {
-                if (computerIndexes2.includes(8)) {
+        if (getComputerIndexes.includes(2)) {
+            if (getComputerIndexes.includes(5)) {
+                if (getComputerIndexes.includes(8)) {
                     gameWon = true;
                     winningText.textContent = "O Wins!"
                     winningMessage.style.display='block';
@@ -226,9 +214,9 @@ function playGame() {
                 }
             }
         }
-        if (computerIndexes2.includes(0)) {
-            if (computerIndexes2.includes(4)) {
-                if (computerIndexes2.includes(8)) {
+        if (getComputerIndexes.includes(0)) {
+            if (getComputerIndexes.includes(4)) {
+                if (getComputerIndexes.includes(8)) {
                     gameWon = true;
                     console.log("You lose!");
                     winningText.textContent = "O Wins!"
@@ -238,9 +226,9 @@ function playGame() {
                 }
             }
         }
-        if (computerIndexes2.includes(2)) {
-            if (computerIndexes2.includes(4)) {
-                if (computerIndexes2.includes(6)) {
+        if (getComputerIndexes.includes(2)) {
+            if (getComputerIndexes.includes(4)) {
+                if (getComputerIndexes.includes(6)) {
                     gameWon = true;
                     console.log("You lose!");
                     winningText.textContent = "O Wins!"
@@ -298,4 +286,3 @@ function playGame() {
     }
 }
 playGame();
-
